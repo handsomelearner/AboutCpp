@@ -1,0 +1,18 @@
+List Create(List L,int n)
+{
+    List h=L,p=h;
+    ElementType x;
+    h=(List)malloc(sizeof(struct Node));
+    p=h;
+    for(int i=1;i<=(n-1);i++)
+    {
+        std::cin>>x;
+        p->data=x;
+        p->next=(PtrToNode)malloc(sizeof(struct Node));
+        p=p->next;
+    }
+    std::cin>>x;
+    p->data=x;
+    p->next=NULL;
+    return h;
+}
