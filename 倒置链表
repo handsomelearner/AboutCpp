@@ -1,0 +1,13 @@
+List Rev(List L)
+{
+    List t,p;
+    p=NULL;
+    while(L!=NULL)
+    {
+        t=L->next;
+        L->next=p;
+        p=L;
+        L=t;
+    }
+    return p;
+}
