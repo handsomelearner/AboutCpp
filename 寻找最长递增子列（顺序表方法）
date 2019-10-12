@@ -1,0 +1,28 @@
+List Find(List L)
+{
+    int maxLong=0,Long,Left,Right;
+    for(int i=1;i<L->Last;i++)
+    {
+        for(int j=i;j<L->Last;j++)
+        {
+            if(L->Data[j]>L->Data[j-1])
+            {
+                Long=j-i+2;
+                if(Long>maxLong)
+                {
+                    maxLong=Long;
+                    Left=i-1;
+                    Right=j;
+                }
+            }
+            else break;
+            
+        }
+    }
+    L->Last=maxLong;
+    for(int i=0;i<maxLong;i++)
+    {
+        L->Data[i]=L->Data[Left+i];
+    }
+    return L;
+}
