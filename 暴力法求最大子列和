@@ -1,0 +1,24 @@
+#include <stdio.h>
+//N是数组长度，num是待计算的数组，放在全局区是因为可以开很大的数组int N, num[1024];
+int main()
+{
+    //输入数据
+    scanf("%d", &N);
+    for(int i = 1; i <= N; i++)
+        scanf("%d", &num[i]);
+    
+    int ans = num[1]; //ans保存最大子序列和，初始化为num[1]能保证最终结果正确
+    //i和j分别是枚举的子序列的起点和终点，k所在循环计算每个子序列的和
+    for(int i = 1; i <= N; i++) {
+        for(int j = i; j <= N; j++) {
+            int s = 0;
+            for(int k = i; k <= j; k++) {
+                s += num[k];
+            }
+            if(s > ans) ans = s;
+        }
+    }
+    printf("%d\n", ans);
+
+    return 0;
+}
