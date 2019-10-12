@@ -1,0 +1,8 @@
+typedef int ElementType;
+typedef struct Node *PtrToNode;
+struct Node
+{
+    ElementType data;
+    PtrToNode next;
+};
+typedef PtrToNode List;
