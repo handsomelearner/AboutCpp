@@ -1,0 +1,11 @@
+void Look(List L)
+{
+    List h=L,p=h;
+    while(p!=NULL)
+    {
+        std::cout<< p->data;
+        std::cout<<" ";
+        p=p->next;
+    }
+    
+}
